@@ -26,3 +26,9 @@ jobs:
 
       - name: Executar Testes
         run: mvn test
+
+      - name: Análise SonarQube
+        uses: SonarSource/sonarcloud-github-action@master
+        with:
+          organization: 'jose-ricardo-silveira'
+          token: ${{ secrets.SONAR_TOKEN }}
