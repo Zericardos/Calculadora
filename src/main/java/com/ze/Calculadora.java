@@ -22,9 +22,9 @@ public class Calculadora {
         if (arg instanceof Number) {
             // Usamos o toString para preservar a representação textual, evitando imprecisões do double
             return new BigDecimal(arg.toString());
-        } else if (arg instanceof String) {
+        } else if (arg instanceof String string) {
             try {
-                return new BigDecimal((String) arg);
+                return new BigDecimal(string);
             } catch (NumberFormatException e) {
                 throw new IllegalArgumentException("String não numérica: " + arg);
             }
