@@ -36,7 +36,6 @@ public class Calculadora {
             } catch (NumberFormatException e) {
                 throw new IllegalArgumentException("Character não numérico: " + arg);
             }
-
             // Character é apenas um caractere, logo '1' é válido, mas "12" não é possível com char.
             // Se for um Character, converte para String e tenta parsear.
         } else {
