@@ -27,8 +27,7 @@ jobs:
       - name: Executar Testes
         run: mvn test
 
-      - name: Análise SonarQube
-        uses: SonarSource/sonarcloud-github-action@master
-        with:
-          organization: 'jose-ricardo-silveira'
-          token: ${{ secrets.SONAR_TOKEN }}
+      - name: Análise SonarCloud
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Zericardos_Calculadora
